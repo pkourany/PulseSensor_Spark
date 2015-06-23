@@ -1,8 +1,7 @@
-PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
+PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015
 
- >>> Pulse Sensor Amped 1.4 <<<
 
-!!! FOR PARTICLE CORE ONLY !!!
+Pulse Sensor Amped 1.4 !!! FOR PARTICLE CORE ONLY !!!
 ------
 
 This code is for Pulse Sensor Amped by Joel Murphy and Yury Gitman
@@ -36,13 +35,15 @@ Open a serial monitor for this ASCII visualization.
 
 To Turn On ASCII Visualizer:
 
-```// Regards Serial OutPut  -- Set This Up to your needs
+```
+// Regards Serial OutPut  -- Set This Up to your needs
 static boolean serialVisual = false;   // Set to 'false' by Default. 
 ```
 
 to:
 
-```// Regards Serial OutPut  -- Set This Up to your needs
+```
+// Regards Serial OutPut  -- Set This Up to your needs
 static boolean serialVisual = true;   // Re-set to 'true' to do ASCII Visual Pulse  : ) 
 ```
 
