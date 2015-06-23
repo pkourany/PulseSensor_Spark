@@ -1,7 +1,6 @@
 PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
 
 >> Pulse Sensor Amped 1.4 <<
-=====
 
 !!! FOR PARTICLE CORE ONLY !!!
 ------
