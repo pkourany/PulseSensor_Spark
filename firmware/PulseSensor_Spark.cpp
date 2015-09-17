@@ -8,8 +8,8 @@ void interruptSetup(void){
 } 
 
 
-// THIS IS THE TIMER 2 INTERRUPT SERVICE ROUTINE. 
-// Timer 2 makes sure that we take a reading every 2 miliseconds
+// THIS IS THE TIMER (2 on Core, 3 on Photon) INTERRUPT SERVICE ROUTINE. 
+// The Timer makes sure that we take a reading every 2 miliseconds
 //ISR(TIMER2_COMPA_vect){                         // triggered when Timer2 counts to 124
 void pulseISR(void) {
   noInterrupts();
@@ -33,7 +33,7 @@ void pulseISR(void) {
   if (N > 250){                                   // avoid high frequency noise
     if ( (Signal > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){        
       Pulse = true;                               // set the Pulse flag when we think there is a pulse
-      digitalWrite(blinkPin,HIGH);                // turn on pin 13 LED
+      digitalWrite(blinkPin,HIGH);                // turn on blink LED
       IBI = sampleCounter - lastBeatTime;         // measure time between beats in mS
       lastBeatTime = sampleCounter;               // keep track of time for next pulse
 
@@ -70,7 +70,7 @@ void pulseISR(void) {
   }
 
   if (Signal < thresh && Pulse == true){   // when the values are going down, the beat is over
-    digitalWrite(blinkPin,LOW);            // turn off pin 13 LED
+    digitalWrite(blinkPin,LOW);            // turn off pin blink LED
     Pulse = false;                         // reset the Pulse flag so we can do it again
     amp = P - T;                           // get amplitude of the pulse wave
     thresh = amp/2 + T;                    // set thresh at 50% of the amplitude
