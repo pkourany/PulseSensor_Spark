@@ -1,13 +1,16 @@
-PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015
+PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
+
+# Pulse Sensor Amped 1.4
+=====
 
 
-Pulse Sensor Amped 1.4 !!! FOR PARTICLE CORE ONLY !!!
+## Now for Particle Core and Photon !!!
 ------
 
 This code is for Pulse Sensor Amped by Joel Murphy and Yury Gitman
     www.pulsesensor.com 
 	
-    >>> Pulse Sensor purple wire goes to Analog Pin A2 (see Interrupt.h for details) <<<
+    >>> Pulse Sensor purple wire goes to Analog Pin A2 (see PulseSensor_Spark.h for details) <<<
 	
 Pulse Sensor sample aquisition and processing happens in the background via a hardware Timer interrupt. 2mS sample rate.
 PWM on selectable pins A0 and A1 will not work when using this code, because the first allocated timer is TIMR2!
@@ -27,6 +30,10 @@ It will also fade an LED on pin fadePin with every beat. Put an LED and series r
 Check here for detailed code walkthrough:
 http://pulsesensor.myshopify.com/pages/pulse-sensor-amped-arduino-v1dot1
 
+New to v1.5 (Sept 2015)
+
+Works with Paritcle Core and Photon!
+
 New to v1.4
 -------
 
@@ -35,15 +42,13 @@ Open a serial monitor for this ASCII visualization.
 
 To Turn On ASCII Visualizer:
 
-```
-// Regards Serial OutPut  -- Set This Up to your needs
+```// Regards Serial OutPut  -- Set This Up to your needs
 static boolean serialVisual = false;   // Set to 'false' by Default. 
 ```
 
 to:
 
-```
-// Regards Serial OutPut  -- Set This Up to your needs
+```// Regards Serial OutPut  -- Set This Up to your needs
 static boolean serialVisual = true;   // Re-set to 'true' to do ASCII Visual Pulse  : ) 
 ```
 
