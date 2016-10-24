@@ -8,15 +8,15 @@ PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
 Removed the outdated SparkIntervalTimer library code so user can attach the latest Build (IDE) version.
 
 In order for this app to compile correctly, the following Partible Build (Web IDE) library MUST be attched:
-  >>> SparkIntervalTimer <<<
 
-----
+    SparkIntervalTimer
+
 
 
 This code is for Pulse Sensor Amped by Joel Murphy and Yury Gitman
     www.pulsesensor.com 
 	
-    >>> Pulse Sensor purple wire goes to Analog Pin A2 (see PulseSensor_Spark.h for details) <<<
+    Pulse Sensor purple wire goes to Analog Pin A2 (see PulseSensor_Spark.h for details)
 	
 Pulse Sensor sample aquisition and processing happens in the background via a hardware Timer interrupt. 2mS sample rate.
 PWM on selectable pins A0 and A1 will not work when using this code, because the first allocated timer is TIMR2!
