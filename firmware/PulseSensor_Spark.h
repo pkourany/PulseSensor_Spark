@@ -2,7 +2,7 @@
 #define PULSE_INTERRUPT_H
 
 #include "application.h"
-#include "SparkIntervalTimer.h"
+#include "SparkIntervalTimer/SparkIntervalTimer.h"
 
 volatile int rate[10];                    // array to hold last ten IBI values
 volatile unsigned long sampleCounter = 0;          // used to determine pulse timing
