@@ -8,10 +8,9 @@ PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
 Removed the outdated SparkIntervalTimer library code so user can attach the latest Build (IDE) version.
 
 In order for this app to compile correctly, the following Partible Build (Web IDE) library MUST be attched:
+* SparkIntervalTimer
 
-    SparkIntervalTimer
-
-
+---
 
 This code is for Pulse Sensor Amped by Joel Murphy and Yury Gitman
     www.pulsesensor.com 
