@@ -7,6 +7,7 @@ PulseSensor Library adapted for Spark Core by Paul Kourany, June 2015 from:
 ## Update Oct 24/2016
 Removed the outdated SparkIntervalTimer library code so user can attach the latest Build (IDE) version.
 
+----
 
 
 This code is for Pulse Sensor Amped by Joel Murphy and Yury Gitman
