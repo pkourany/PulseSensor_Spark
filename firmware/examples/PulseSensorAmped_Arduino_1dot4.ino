@@ -30,9 +30,10 @@ This update fixes the firstBeat and secondBeat flag usage so that realistic BPM 
 >>> Adapted for Spark Core by Paul Kourany, May 2014 <<<
 >>> Updated for Particle Core and Photon by Paul Kourany, Sept 2015 <<<
 
+
+
 */
 
-#include "PulseSensor_Spark/SparkIntervalTimer.h"
 
 void interruptSetup(void);
 void serialOutput();
