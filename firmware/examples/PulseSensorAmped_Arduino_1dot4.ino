@@ -29,8 +29,10 @@ This update fixes the firstBeat and secondBeat flag usage so that realistic BPM 
 
 >>> Adapted for Spark Core by Paul Kourany, May 2014 <<<
 >>> Updated for Particle Core and Photon by Paul Kourany, Sept 2015 <<<
+>>> Updated to remove (outdated) SparkInterval library code, Oct 2016 <<<
 
-
+In order for this app to compile correctly, the following Partible Build (Web IDE) library MUST be attched:
+ - SparkIntervalTimer
 
 */
 
