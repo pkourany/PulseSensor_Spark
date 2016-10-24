@@ -1,10 +1,11 @@
 #include "application.h"
 #include "PulseSensor_Spark.h"
 
+
+
 void interruptSetup(void){
   // Allocate a timer to throw an interrupt every 2mS.
   pulseTimer.begin(pulseISR, 2000, uSec);  // blinkLED to run every 2ms (2000 * 1us period)
-
 } 
 
 
