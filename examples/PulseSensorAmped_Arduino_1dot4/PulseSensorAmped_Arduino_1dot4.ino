@@ -36,14 +36,7 @@ In order for this app to compile correctly, the following Partible Build (Web ID
 
 */
 
-
-void interruptSetup(void);
-void serialOutput();
-void serialOutputWhenBeatHappens();
-void sendDataToSerial(char symbol, int data );
-void ledFadeToBeat();
-void arduinoSerialMonitorVisual(char symbol, int data );
-
+extern void interruptSetup(void);
 
 extern int pulsePin;
 extern int blinkPin;
