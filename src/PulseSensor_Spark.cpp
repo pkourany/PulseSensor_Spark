@@ -14,25 +14,25 @@ void interruptSetup(void){
 //ISR(TIMER2_COMPA_vect){                         // triggered when Timer2 counts to 124
 void pulseISR(void) {
   noInterrupts();
-  Signal = analogRead(pulsePin);              // read the Pulse Sensor 
+  rawSignal = analogRead(pulsePin);              // read the Pulse Sensor 
   sampleCounter += 2;                         // keep track of the time in mS with this variable
   int N = sampleCounter - lastBeatTime;       // monitor the time since the last beat to avoid noise
 
     //  find the peak and trough of the pulse wave
-  if(Signal < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
-    if (Signal < T){                        // T is the trough
-      T = Signal;                         // keep track of lowest point in pulse wave 
+  if(rawSignal < thresh && N > (IBI/5)*3){       // avoid dichrotic noise by waiting 3/5 of last IBI
+    if (rawSignal < T){                        // T is the trough
+      T = rawSignal;                         // keep track of lowest point in pulse wave 
     }
   }
 
-  if(Signal > thresh && Signal > P){          // thresh condition helps avoid noise
-    P = Signal;                             // P is the peak
+  if(rawSignal > thresh && rawSignal > P){          // thresh condition helps avoid noise
+    P = rawSignal;                             // P is the peak
   }                                        // keep track of highest point in pulse wave
 
   //  NOW IT'S TIME TO LOOK FOR THE HEART BEAT
   // signal surges up in value every time there is a pulse
   if (N > 250){                                   // avoid high frequency noise
-    if ( (Signal > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){        
+    if ( (rawSignal > thresh) && (Pulse == false) && (N > (IBI/5)*3) ){        
       Pulse = true;                               // set the Pulse flag when we think there is a pulse
       digitalWrite(blinkPin,HIGH);                // turn on blink LED
       IBI = sampleCounter - lastBeatTime;         // measure time between beats in mS
@@ -70,7 +70,7 @@ void pulseISR(void) {
     }                       
   }
 
-  if (Signal < thresh && Pulse == true){   // when the values are going down, the beat is over
+  if (rawSignal < thresh && Pulse == true){   // when the values are going down, the beat is over
     digitalWrite(blinkPin,LOW);            // turn off pin blink LED
     Pulse = false;                         // reset the Pulse flag so we can do it again
     amp = P - T;                           // get amplitude of the pulse wave
