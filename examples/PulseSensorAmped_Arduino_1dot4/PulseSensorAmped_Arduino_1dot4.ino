@@ -9,7 +9,7 @@ On the Core, PWM on selectable pins A0 and A1 will not work when using this code
 On the Photon, TIMR3 is allocated and has no affect on the A2 pin.
 
 The following variables are automatically updated:
-Signal :    int that holds the analog signal data straight from the sensor. updated every 2mS.
+rawSignal : int that holds the analog signal data straight from the sensor. updated every 2mS.
 IBI  :      int that holds the time interval between beats. 2mS resolution.
 BPM  :      int that holds the heart rate value, derived every beat, from averaging previous 10 IBI values.
 QS  :       boolean that is made true whenever Pulse is found and BPM is updated. User must reset.
@@ -41,7 +41,7 @@ extern void interruptSetup(void);
 extern int pulsePin;
 extern int blinkPin;
 extern volatile int BPM;;
-extern volatile int Signal;;
+extern volatile int rawSignal;;
 extern volatile int IBI;
 extern volatile boolean Pulse;
 extern volatile boolean QS;
